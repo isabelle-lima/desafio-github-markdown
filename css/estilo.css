@@ -1,0 +1,116 @@
+/* Paleta de Cores Inspirada em Naruto:
+   Laranja Principal: #F98800 (ou mais escuro #E57373)
+   Preto/Contraste: #1A1A1A
+   Dourado/Detalhe: #FFC107
+   Azul (Chakra/Bandana): #2196F3
+   Fundo Claro: #FAFAFA
+*/
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Fonte simples e legível */
+}
+
+body {
+    background-color: #FAFAFA; /* Fundo leve */
+    color: #1A1A1A; /* Cor principal do texto: preto */
+    line-height: 1.6;
+}
+
+/* Header (Cabeçalho) */
+header {
+    background-color: #F98800; /* Laranja de Naruto */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #FFC107; /* Detalhe Dourado */
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Main Content (Conteúdo Principal) */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.introducao {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.introducao h2 {
+    color: #F98800; /* Laranja */
+    border-bottom: 3px solid #2196F3; /* Linha azul de Chakra */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Seção Pilares (Cards) */
+.pilares h2 {
+    text-align: center;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Para 3 cards por linha */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #F98800; /* Borda laranja ao passar o mouse */
+}
+
+.card h3 {
+    color: #FFC107; /* Dourado */
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+.card:nth-child(2) h3 { /* Detalhe para o card do Time 7 */
+    color: #2196F3; /* Azul */
+}
+
+/* Footer (Rodapé) */
+footer {
+    background-color: #1A1A1A; /* Preto */
+    color: #FFC107; /* Texto Dourado */
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica (Para telas menores) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Um card por linha em telas menores */
+    }
+}

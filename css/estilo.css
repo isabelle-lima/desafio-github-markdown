@@ -1,5 +1,5 @@
 /* Paleta de Cores Inspirada em Naruto:
-   Laranja Principal: #F98800 (ou mais escuro #E57373)
+   Laranja Principal: #F98800
    Preto/Contraste: #1A1A1A
    Dourado/Detalhe: #FFC107
    Azul (Chakra/Bandana): #2196F3
@@ -11,30 +11,109 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif; /* Fonte simples e legível */
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #FAFAFA; /* Fundo leve */
-    color: #1A1A1A; /* Cor principal do texto: preto */
+    background-color: #FAFAFA;
+    color: #1A1A1A;
     line-height: 1.6;
 }
 
 /* Header (Cabeçalho) */
 header {
-    background-color: #F98800; /* Laranja de Naruto */
+    background-color: #F98800;
     color: white;
-    padding: 20px 0;
+    padding: 20px 0 0 0;
     text-align: center;
-    border-bottom: 5px solid #FFC107; /* Detalhe Dourado */
+    border-bottom: 5px solid #FFC107;
 }
 
 header h1 {
     font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
 }
 
-/* Main Content (Conteúdo Principal) */
+/* -------------------------------------- */
+/* ESTILOS DA NAVEGAÇÃO E DROPDOWN (Menu Suspenso) */
+/* -------------------------------------- */
+
+.menu-principal {
+    background-color: #1A1A1A;
+}
+
+.menu-principal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinhamento horizontal */
+    justify-content: center;
+}
+
+/* Container do item de menu */
+.menu-principal li {
+    list-style: none;
+    position: relative; /* CRUCIAL: O pai (LI) é o ponto de referência para o menu absoluto */
+}
+
+/* Estilo dos Links Principais */
+.menu-principal li a, .dropbtn {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu-principal li a:hover, .dropdown:hover .dropbtn {
+    background-color: #2196F3;
+    color: #FFC107;
+}
+
+/* Conteúdo do Menu Suspenso */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* MUDANÇA CRUCIAL: Fundo escuro (Preto/Contraste) */
+    background-color: #1A1A1A; 
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    /* Mantém o detalhe Laranja no topo */
+    border-top: 3px solid #F98800; 
+}
+
+/* REGRA CHAVE: Mostra o conteúdo quando o mouse está sobre o LI pai (.dropdown) */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Links dentro do menu suspenso */
+.dropdown-content a {
+    /* MUDANÇA: Cor do texto Dourada sobre o fundo Preto */
+    color: #FFC107; /* Dourado/Detalhe */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    /* MUDANÇA: Fundo Laranja de Naruto e texto Preto para contraste */
+    background-color: #F98800; /* Laranja Principal como fundo do hover */
+    color: #1A1A1A; /* Preto/Contraste como cor do texto do hover */
+}
+
+/* -------------------------------------- */
+/* FIM DOS ESTILOS DE NAVEGAÇÃO */
+/* -------------------------------------- */
+
+/* Main Content (Conteúdo Principal) e Footer (Estilos originais mantidos) */
+
 main {
     padding: 20px;
     max-width: 1200px;
@@ -50,13 +129,12 @@ main {
 }
 
 .introducao h2 {
-    color: #F98800; /* Laranja */
-    border-bottom: 3px solid #2196F3; /* Linha azul de Chakra */
+    color: #F98800;
+    border-bottom: 3px solid #2196F3;
     padding-bottom: 10px;
     margin-bottom: 15px;
 }
 
-/* Seção Pilares (Cards) */
 .pilares h2 {
     text-align: center;
     color: #1A1A1A;
@@ -76,41 +154,49 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    width: calc(33.333% - 20px); /* Para 3 cards por linha */
+    width: calc(33.333% - 20px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s, border-color 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: #F98800; /* Borda laranja ao passar o mouse */
+    border-color: #F98800;
 }
 
 .card h3 {
-    color: #FFC107; /* Dourado */
+    color: #FFC107;
     margin-bottom: 10px;
     font-size: 1.5em;
     border-bottom: 1px dashed #ddd;
     padding-bottom: 5px;
 }
 
-.card:nth-child(2) h3 { /* Detalhe para o card do Time 7 */
-    color: #2196F3; /* Azul */
+.card:nth-child(2) h3 {
+    color: #2196F3;
 }
 
-/* Footer (Rodapé) */
 footer {
-    background-color: #1A1A1A; /* Preto */
-    color: #FFC107; /* Texto Dourado */
+    background-color: #1A1A1A;
+    color: #FFC107;
     text-align: center;
     padding: 15px 0;
     margin-top: 30px;
     font-size: 0.9em;
 }
 
-/* Responsividade Básica (Para telas menores) */
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* Um card por linha em telas menores */
+        width: 100%;
+    }
+    .menu-principal ul {
+        flex-direction: column;
+    }
+    .menu-principal li {
+        width: 100%;
+    }
+    .dropdown-content {
+        position: static;
+        min-width: 100%;
     }
 }

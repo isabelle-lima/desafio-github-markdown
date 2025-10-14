@@ -3,7 +3,7 @@
 #### Colaboração
 1. Adicionar colaborador ao respositório [ X ]
 2. Ambos devem fazer um clone do repositório em suas máquinas locais [ X ]
-3. Realizar alterações, commits, abrir issues e pull requests [ ]
+3. Realizar alterações, commits, abrir issues e pull requests [ X ]
 
 #### Formatação com Markdown
 1. Editar o arquivo "README.MD" em seu repositório [ X ]
